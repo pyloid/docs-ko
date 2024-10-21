@@ -133,7 +133,7 @@ app.run()
 ```
 
 {% endtab %}
-{% endtabs}
+{% endtabs %}
 
 ### 타이머 활성 상태 확인
 
@@ -172,7 +172,7 @@ app.run()
 ```
 
 {% endtab %}
-{% endtabs}
+{% endtabs %}
 
 ### 남은 시간 확인
 
@@ -209,7 +209,7 @@ app.run()
 ```
 
 {% endtab %}
-{% endtabs}
+{% endtabs %}
 
 ### 타이머 간격 변경
 
@@ -243,7 +243,7 @@ app.run()
 ```
 
 {% endtab %}
-{% endtabs}
+{% endtabs %}
 
 ## 정밀 타이머
 
@@ -282,7 +282,7 @@ app.run()
 ```
 
 {% endtab %}
-{% endtabs}
+{% endtabs %}
 
 ## 고급 사용법
 
@@ -327,7 +327,7 @@ app.run()
 ```
 
 {% endtab %}
-{% endtabs}
+{% endtabs %}
 
 ## 결론
 
