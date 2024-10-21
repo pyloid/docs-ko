@@ -1,51 +1,51 @@
-# Clipboard
+# 클립보드
 
-Pyloid provides easy-to-use clipboard functionality. You can copy text and images to the clipboard or retrieve them from the clipboard.
+Pyloid는 사용하기 쉬운 클립보드 기능을 제공합니다. 텍스트와 이미지를 클립보드에 복사하거나 클립보드에서 가져올 수 있습니다.
 
-## Text Operations
+## 텍스트 작업
 
-### Copying Text to Clipboard
+### 텍스트를 클립보드에 복사하기
 
 ```python
-app.copy_to_clipboard("Text to be copied")
+app.copy_to_clipboard("복사할 텍스트")
 ```
 
-You can use this function to copy desired text to the clipboard.
+이 함수를 사용하여 원하는 텍스트를 클립보드에 복사할 수 있습니다.
 
-### Getting Text from Clipboard
+### 클립보드에서 텍스트 가져오기
 
 ```python
 text = app.get_clipboard_text()
 print(text)
 ```
 
-You can use this function to retrieve the text currently on the clipboard.
+이 함수를 사용하여 현재 클립보드에 있는 텍스트를 가져올 수 있습니다.
 
-## Image Operations
+## 이미지 작업
 
-### Copying Image to Clipboard
+### 이미지를 클립보드에 복사하기
 
 ```python
 app.set_clipboard_image("assets/icon.png")
 ```
 
-You can use this function to copy an image file to the clipboard. Just pass the file path as a string.
+이 함수를 사용하여 이미지 파일을 클립보드에 복사할 수 있습니다. 파일 경로를 문자열로 전달하면 됩니다.
 
-### Getting Image from Clipboard
+### 클립보드에서 이미지 가져오기
 
 ```python
 image = app.get_clipboard_image()
 if image:
-    print("Successfully retrieved the image.")
+    print("이미지를 성공적으로 가져왔습니다.")
 else:
-    print("No image on the clipboard.")
+    print("클립보드에 이미지가 없습니다.")
 ```
 
-You can use this function to retrieve the image currently on the clipboard. The returned image is of QImage type. If there's no image on the clipboard, it returns `None`.
+이 함수를 사용하여 현재 클립보드에 있는 이미지를 가져올 수 있습니다. 반환된 이미지는 QImage 타입입니다. 클립보드에 이미지가 없으면 `None`을 반환합니다.
 
-With the QImage object, you can perform various operations such as image processing, display, saving, etc.
+QImage 객체를 사용하여 이미지 처리, 표시, 저장 등 다양한 작업을 수행할 수 있습니다.
 
-## Notes
+## 참고사항
 
-* The `set_clipboard_image` function can accept not only image file paths but also byte data or `os.PathLike` objects.
-* The `get_clipboard_image` function returns a QImage object. You can use this for image processing, display, and other operations.
+- `set_clipboard_image` 함수는 이미지 파일 경로뿐만 아니라 바이트 데이터나 `os.PathLike` 객체도 받을 수 있습니다.
+- `get_clipboard_image` 함수는 QImage 객체를 반환합니다. 이를 사용하여 이미지 처리, 표시 및 기타 작업을 수행할 수 있습니다.

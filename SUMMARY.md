@@ -1,39 +1,39 @@
-# Table of contents
+# 목차
 
-* [💎 What is Pyloid?](README.md)
+* [💎 Pyloid란 무엇인가?](README.md)
 
-## Getting Started
+## 시작하기
 
-* [Prerequisites](getting-started/prerequisites.md)
-* [Creating a Project](getting-started/creating-a-project.md)
+* [사전 요구사항](getting-started/prerequisites.md)
+* [프로젝트 생성하기](getting-started/creating-a-project.md)
 
 ## API
 
-* [Python (Backend)](api/python-backend/README.md)
+* [Python (백엔드)](api/python-backend/README.md)
   * [Pyloid](api/python-backend/pyloid.md)
   * [BrowserWindow](api/python-backend/browserwindow.md)
   * [PyloidAPI](api/python-backend/pyloidapi.md)
   * [Monitor](api/python-backend/monitor.md)
   * [TrayEvent](api/python-backend/trayevent.md)
-  * [Utility Functions](api/python-backend/utils.md)
-* [Javascript (Frontend)](api/javascript-frontend/README.md)
+  * [유틸리티 함수](api/python-backend/utils.md)
+* [Javascript (프론트엔드)](api/javascript-frontend/README.md)
   * [WindowAPI](api/javascript-frontend/windowapi.md)
   * [EventAPI](api/javascript-frontend/eventapi.md)
 
-## Guides
+## 가이드
 
-* [Calling the Python from JS](guides/calling-the-python-from-js.md)
-* [Calling the JS from Python](guides/calling-the-js-from-python.md)
-* [Keyboard Shotcuts](guides/keyboard-shotcuts.md)
-* [Notification](guides/notification.md)
-* [Tray](guides/tray.md)
-* [Timer](guides/timer.md)
-* [File Watcher](guides/filewatcher.md)
-* [Clipboard](guides/clipboard.md)
-* [Devtools](guides/devtools-settings.md)
-* [Window Customization](guides/window-customization.md)
-* [Autostart](guides/autostart.md)
-* [Production Utils](guides/production-utils.md)
-* [Build Guide](guides/build-guide/README.md)
+* [JS에서 Python 호출하기](guides/calling-the-python-from-js.md)
+* [Python에서 JS 호출하기](guides/calling-the-js-from-python.md)
+* [키보드 단축키](guides/keyboard-shotcuts.md)
+* [알림](guides/notification.md)
+* [트레이](guides/tray.md)
+* [타이머](guides/timer.md)
+* [파일 감시](guides/filewatcher.md)
+* [클립보드](guides/clipboard.md)
+* [개발자 도구](guides/devtools-settings.md)
+* [창 사용자 정의](guides/window-customization.md)
+* [자동 시작](guides/autostart.md)
+* [프로덕션 유틸리티](guides/production-utils.md)
+* [빌드 가이드](guides/build-guide/README.md)
   * [Pyloid-React-Vite](guides/build-guide/pyloid-react.md)
   * [Pyloid-HTML-Boilerplate](guides/build-guide/pyloid-html.md)

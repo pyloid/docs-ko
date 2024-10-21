@@ -1,21 +1,21 @@
 # WindowAPI
 
-## WindowAPI (JavaScript) Documentation
+## WindowAPI (JavaScript) 문서
 
-The `WindowAPI` provides various methods to interact with a window in the Pyloid application. Each method is available through JavaScript using `window.pyloid.WindowAPI` and can be called with `await` for asynchronous operation or as a Promise. Below is a detailed overview of each method available through this API.
+`WindowAPI`는 Pyloid 애플리케이션에서 창과 상호 작용하기 위한 다양한 메서드를 제공합니다. 각 메서드는 JavaScript를 통해 `window.pyloid.WindowAPI`로 사용할 수 있으며, 비동기 작업을 위해 `await`를 사용하거나 Promise로 호출할 수 있습니다. 아래는 이 API를 통해 사용 가능한 각 메서드에 대한 자세한 설명입니다.
 
-### Usage
+### 사용법
 
-To use any method in the `WindowAPI`, simply call it using `window.pyloid.WindowAPI.<methodName>()`. Most methods return a Promise and can be used with `await` for synchronous-like behavior in an asynchronous environment.
+`WindowAPI`의 모든 메서드를 사용하려면 간단히 `window.pyloid.WindowAPI.<메서드명>()`으로 호출하면 됩니다. 대부분의 메서드는 Promise를 반환하며 비동기 환경에서 동기적 동작을 위해 `await`와 함께 사용할 수 있습니다.
 
-***
+---
 
 #### 1. `getWindowId()`
 
-* **Description**: Returns the current window's ID.
-* **Returns**: `Promise<string>` - The window ID as a string.
+- **설명**: 현재 창의 ID를 반환합니다.
+- **반환**: `Promise<string>` - 창 ID를 문자열로 반환합니다.
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 const windowId = await window.pyloid.WindowAPI.getWindowId();
@@ -24,10 +24,10 @@ console.log(windowId);
 
 #### 2. `close()`
 
-* **Description**: Closes the current window.
-* **Returns**: `Promise<void>`
+- **설명**: 현재 창을 닫습니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.close();
@@ -35,10 +35,10 @@ await window.pyloid.WindowAPI.close();
 
 #### 3. `hide()`
 
-* **Description**: Hides the current window.
-* **Returns**: `Promise<void>`
+- **설명**: 현재 창을 숨깁니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.hide();
@@ -46,10 +46,10 @@ await window.pyloid.WindowAPI.hide();
 
 #### 4. `show()`
 
-* **Description**: Shows and focuses the current window.
-* **Returns**: `Promise<void>`
+- **설명**: 현재 창을 보여주고 포커스를 맞춥니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.show();
@@ -57,10 +57,10 @@ await window.pyloid.WindowAPI.show();
 
 #### 5. `toggleFullscreen()`
 
-* **Description**: Toggles fullscreen mode for the current window.
-* **Returns**: `Promise<void>`
+- **설명**: 현재 창의 전체 화면 모드를 전환합니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.toggleFullscreen();
@@ -68,10 +68,10 @@ await window.pyloid.WindowAPI.toggleFullscreen();
 
 #### 6. `minimize()`
 
-* **Description**: Minimizes the current window.
-* **Returns**: `Promise<void>`
+- **설명**: 현재 창을 최소화합니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.minimize();
@@ -79,10 +79,10 @@ await window.pyloid.WindowAPI.minimize();
 
 #### 7. `maximize()`
 
-* **Description**: Maximizes the current window.
-* **Returns**: `Promise<void>`
+- **설명**: 현재 창을 최대화합니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.maximize();
@@ -90,10 +90,10 @@ await window.pyloid.WindowAPI.maximize();
 
 #### 8. `unmaximize()`
 
-* **Description**: Restores the window to its normal state.
-* **Returns**: `Promise<void>`
+- **설명**: 창을 정상 상태로 복원합니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.unmaximize();
@@ -101,26 +101,26 @@ await window.pyloid.WindowAPI.unmaximize();
 
 #### 9. `setTitle(title: string)`
 
-* **Description**: Sets the title of the window.
-* **Parameters**:
-  * `title` (`string`): The title to set for the window.
-* **Returns**: `Promise<void>`
+- **설명**: 창의 제목을 설정합니다.
+- **매개변수**:
+  - `title` (`string`): 창에 설정할 제목입니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
-await window.pyloid.WindowAPI.setTitle("My App Window");
+await window.pyloid.WindowAPI.setTitle('내 앱 창');
 ```
 
 #### 10. `setSize(width: number, height: number)`
 
-* **Description**: Sets the size of the window.
-* **Parameters**:
-  * `width` (`number`): The desired width of the window.
-  * `height` (`number`): The desired height of the window.
-* **Returns**: `Promise<void>`
+- **설명**: 창의 크기를 설정합니다.
+- **매개변수**:
+  - `width` (`number`): 창의 원하는 너비입니다.
+  - `height` (`number`): 창의 원하는 높이입니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.setSize(800, 600);
@@ -128,13 +128,13 @@ await window.pyloid.WindowAPI.setSize(800, 600);
 
 #### 11. `setPosition(x: number, y: number)`
 
-* **Description**: Sets the position of the window.
-* **Parameters**:
-  * `x` (`number`): The x-coordinate for the window position.
-  * `y` (`number`): The y-coordinate for the window position.
-* **Returns**: `Promise<void>`
+- **설명**: 창의 위치를 설정합니다.
+- **매개변수**:
+  - `x` (`number`): 창 위치의 x 좌표입니다.
+  - `y` (`number`): 창 위치의 y 좌표입니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.setPosition(100, 100);
@@ -142,12 +142,12 @@ await window.pyloid.WindowAPI.setPosition(100, 100);
 
 #### 12. `setFrame(frame: boolean)`
 
-* **Description**: Sets the frame of the window (e.g., window border).
-* **Parameters**:
-  * `frame` (`boolean`): `true` to show the frame, `false` to hide it.
-* **Returns**: `Promise<void>`
+- **설명**: 창의 프레임(예: 창 테두리)을 설정합니다.
+- **매개변수**:
+  - `frame` (`boolean`): 프레임을 표시하려면 `true`, 숨기려면 `false`입니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.setFrame(true);
@@ -155,12 +155,12 @@ await window.pyloid.WindowAPI.setFrame(true);
 
 #### 13. `setContextMenu(contextMenu: boolean)`
 
-* **Description**: Sets the context menu visibility for the window.
-* **Parameters**:
-  * `contextMenu` (`boolean`): `true` to enable the context menu, `false` to disable it.
-* **Returns**: `Promise<void>`
+- **설명**: 창의 컨텍스트 메뉴 표시 여부를 설정합니다.
+- **매개변수**:
+  - `contextMenu` (`boolean`): 컨텍스트 메뉴를 활성화하려면 `true`, 비활성화하려면 `false`입니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
 await window.pyloid.WindowAPI.setContextMenu(false);
@@ -168,44 +168,45 @@ await window.pyloid.WindowAPI.setContextMenu(false);
 
 #### 14. `setDevTools(enable: boolean)`
 
-* **Description**: Enables or disables the developer tools for the window. Additionally, it allows or disallows opening the developer tools using the `F12` key.
-* **Parameters**:
-  * `enable` (`boolean`):
-    * `true` to enable dev tools and allow opening with `F12`.
-    * `false` to disable dev tools and prevent opening with `F12`.
-* **Returns**: `Promise<void>`
+- **설명**: 창의 개발자 도구를 활성화하거나 비활성화합니다. 또한 `F12` 키를 사용하여 개발자 도구를 열 수 있는지 여부를 설정합니다.
+- **매개변수**:
+  - `enable` (`boolean`):
+    - `true`로 설정하면 개발자 도구를 활성화하고 `F12`로 열 수 있습니다.
+    - `false`로 설정하면 개발자 도구를 비활성화하고 `F12`로 열 수 없습니다.
+- **반환**: `Promise<void>`
 
-**Usage**:
+**사용 예**:
 
 ```javascript
-// Enable developer tools and allow opening with F12
+// 개발자 도구를 활성화하고 F12로 열 수 있게 합니다
 await window.pyloid.WindowAPI.setDevTools(true);
 
-// Disable developer tools and prevent opening with F12
+// 개발자 도구를 비활성화하고 F12로 열 수 없게 합니다
 await window.pyloid.WindowAPI.setDevTools(false);
 ```
 
 #### 15. `capture(savePath: string)`
 
-* **Description**: Captures the current window's view and saves it to the specified path.
-* **Parameters**:
-  * `savePath` (`string`): The file path where the captured image should be saved.
-* **Returns**: `Promise<string | null>` - The file path if successful, otherwise `null`.
+- **설명**: 현재 창의 뷰를 캡처하여 지정된 경로에 저장합니다.
+- **매개변수**:
+  - `savePath` (`string`): 캡처된 이미지를 저장할 파일 경로입니다.
+- **반환**: `Promise<string | null>` - 성공 시 파일 경로, 실패 시 `null`을 반환합니다.
 
-**Usage**:
+**사용 예**:
 
 ```javascript
-const filePath = await window.pyloid.WindowAPI.capture('/path/to/save/screenshot.png');
+const filePath = await window.pyloid.WindowAPI.capture(
+  '/path/to/save/screenshot.png'
+);
 if (filePath) {
-  console.log(`Screenshot saved to ${filePath}`);
+  console.log(`스크린샷이 ${filePath}에 저장되었습니다`);
 } else {
-  console.log('Capture failed');
+  console.log('캡처에 실패했습니다');
 }
 ```
 
-***
+---
 
-### Notes
+### 참고사항
 
-* All methods return a `Promise`, allowing them to be used with `await` in asynchronous functions.
-* Use these APIs responsibly, as some actions (e.g., closing or minimizing the window) can affect the user experience.
+- 모든 메서드는 `Promise`를 반환하므로 비동기 함수에서 `await`와 함께 사용할 수 있습니다.

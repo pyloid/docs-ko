@@ -2,5 +2,4 @@
 icon: file-code
 ---
 
-# Build Guide
-
+# 빌드 가이드

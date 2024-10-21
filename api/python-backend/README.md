@@ -13,5 +13,5 @@ layout:
     visible: true
 ---
 
-# Python (Backend)
+# Python (백엔드)
 

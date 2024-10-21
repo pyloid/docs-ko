@@ -1,20 +1,20 @@
-# Tray
+# 트레이
 
-Pyloid makes it easy to implement system tray functionality. This guide explains how to set up a tray icon, handle events, add menu items, animate the icon, and set tooltips. All tray-related features work dynamically, allowing real-time changes even while the app is running.
+Pyloid는 시스템 트레이 기능을 쉽게 구현할 수 있게 해줍니다. 이 가이드에서는 트레이 아이콘 설정, 이벤트 처리, 메뉴 항목 추가, 아이콘 애니메이션, 툴팁 설정 방법을 설명합니다. 모든 트레이 관련 기능은 동적으로 작동하여 앱 실행 중에도 실시간 변경이 가능합니다.
 
-## Setting the Tray Icon
+## 트레이 아이콘 설정하기
 
-Use the `set_tray_icon` method to set the tray icon. This method can be called at any time to change the icon:
+`set_tray_icon` 메서드를 사용하여 트레이 아이콘을 설정합니다. 이 메서드는 언제든지 호출하여 아이콘을 변경할 수 있습니다:
 
 ```python
 app.set_tray_icon("assets/icon.ico")
 ```
 
-Note: This method can be called while the app is running, allowing you to change the icon dynamically based on different conditions.
+참고: 이 메서드는 앱 실행 중에도 호출할 수 있어, 다양한 조건에 따라 아이콘을 동적으로 변경할 수 있습니다.
 
-## Animating the Tray Icon
+## 트레이 아이콘 애니메이션
 
-You can apply animations to the tray icon. Use the `set_tray_icon_animation` method to display multiple icon frames sequentially:
+트레이 아이콘에 애니메이션을 적용할 수 있습니다. `set_tray_icon_animation` 메서드를 사용하여 여러 아이콘 프레임을 순차적으로 표시합니다:
 
 ```python
 app.set_tray_icon_animation(
@@ -28,75 +28,75 @@ app.set_tray_icon_animation(
 )
 ```
 
-This setting can be changed during runtime, and you can revert to a regular icon at any time.
+이 설정은 런타임 중에 변경할 수 있으며, 언제든지 일반 아이콘으로 되돌릴 수 있습니다.
 
-## Setting the Tray Icon Tooltip
+## 트레이 아이콘 툴팁 설정하기
 
-You can set a tooltip that appears when hovering over the tray icon. Use the `set_tray_tooltip` method:
+트레이 아이콘에 마우스를 올렸을 때 나타나는 툴팁을 설정할 수 있습니다. `set_tray_tooltip` 메서드를 사용하세요:
 
 ```python
-app.set_tray_tooltip("This is a Pyloid application.")
+app.set_tray_tooltip("이것은 Pyloid 애플리케이션입니다.")
 ```
 
-The tooltip can also be dynamically changed at any time during app execution.
+툴팁도 앱 실행 중 언제든지 동적으로 변경할 수 있습니다.
 
-## Handling Tray Events
+## 트레이 이벤트 처리하기
 
-You can handle various click events on the tray icon. Use the `set_tray_actions` method to set event handlers. This setting can also be changed at any time:
+트레이 아이콘의 다양한 클릭 이벤트를 처리할 수 있습니다. `set_tray_actions` 메서드를 사용하여 이벤트 핸들러를 설정합니다. 이 설정도 언제든지 변경할 수 있습니다:
 
 ```python
 app.set_tray_actions(
     {
-        TrayEvent.DoubleClick: lambda: print("Tray icon was double-clicked."),
-        TrayEvent.MiddleClick: lambda: print("Tray icon was middle-clicked."),
-        TrayEvent.RightClick: lambda: print("Tray icon was right-clicked."),
-        TrayEvent.LeftClick: lambda: print("Tray icon was left-clicked."),
+        TrayEvent.DoubleClick: lambda: print("트레이 아이콘이 더블 클릭되었습니다."),
+        TrayEvent.MiddleClick: lambda: print("트레이 아이콘이 중간 클릭되었습니다."),
+        TrayEvent.RightClick: lambda: print("트레이 아이콘이 우클릭되었습니다."),
+        TrayEvent.LeftClick: lambda: print("트레이 아이콘이 좌클릭되었습니다."),
     }
 )
 ```
 
-Note: Event handlers can be dynamically added, modified, or removed during app execution.
+참고: 이벤트 핸들러는 앱 실행 중에 동적으로 추가, 수정 또는 제거할 수 있습니다.
 
-## Adding and Dynamically Updating Tray Menu Items
+## 트레이 메뉴 항목 추가 및 동적 업데이트
 
-You can add items to the context menu that appears when right-clicking the tray icon. Use the `set_tray_menu_items` method to set menu items. This menu configuration can also be changed in real-time:
+트레이 아이콘을 우클릭할 때 나타나는 컨텍스트 메뉴에 항목을 추가할 수 있습니다. `set_tray_menu_items` 메서드를 사용하여 메뉴 항목을 설정합니다. 이 메뉴 구성도 실시간으로 변경할 수 있습니다:
 
 ```python
 app.set_tray_menu_items(
     [
-        {"label": "Show Window", "callback": lambda: app.show_and_focus_main_window()},
-        {"label": "Exit", "callback": lambda: app.quit()},
+        {"label": "창 보이기", "callback": lambda: app.show_and_focus_main_window()},
+        {"label": "종료", "callback": lambda: app.quit()},
     ]
 )
 ```
 
-Each menu item is defined as a dictionary with `label` and `callback` keys. Menu items can be dynamically added, modified, or removed while the app is running.
+각 메뉴 항목은 `label`과 `callback` 키를 가진 딕셔너리로 정의됩니다. 메뉴 항목은 앱 실행 중에 동적으로 추가, 수정 또는 제거할 수 있습니다.
 
-Example of dynamically updating the menu:
+메뉴를 동적으로 업데이트하는 예:
 
 ```python
 def update_menu():
     app.set_tray_menu_items(
         [
             {
-                "label": "New Menu 1",
-                "callback": lambda: print("New Menu 1 clicked"),
+                "label": "새 메뉴 1",
+                "callback": lambda: print("새 메뉴 1 클릭됨"),
             },
             {
-                "label": "New Menu 2",
-                "callback": lambda: print("New Menu 2 clicked"),
+                "label": "새 메뉴 2",
+                "callback": lambda: print("새 메뉴 2 클릭됨"),
             },
-            {"label": "Exit", "callback": lambda: app.quit()},
+            {"label": "종료", "callback": lambda: app.quit()},
         ]
     )
 
-# Update tray menu after 5 seconds
+# 5초 후 트레이 메뉴 업데이트
 timer.start_single_shot_timer(5000, update_menu)
 ```
 
-## Complete Example
+## 완전한 예제
 
-Here's a complete example implementing tray functionality. It demonstrates that all settings can be changed dynamically:
+다음은 트레이 기능을 구현한 완전한 예제입니다. 모든 설정이 동적으로 변경될 수 있음을 보여줍니다:
 
 ```python
 import os
@@ -115,40 +115,40 @@ else:
 
 app.set_tray_actions(
     {
-        TrayEvent.DoubleClick: lambda: print("Tray icon was double-clicked."),
-        TrayEvent.MiddleClick: lambda: print("Tray icon was middle-clicked."),
-        TrayEvent.RightClick: lambda: print("Tray icon was right-clicked."),
-        TrayEvent.LeftClick: lambda: print("Tray icon was left-clicked."),
+        TrayEvent.DoubleClick: lambda: print("트레이 아이콘이 더블 클릭되었습니다."),
+        TrayEvent.MiddleClick: lambda: print("트레이 아이콘이 중간 클릭되었습니다."),
+        TrayEvent.RightClick: lambda: print("트레이 아이콘이 우클릭되었습니다."),
+        TrayEvent.LeftClick: lambda: print("트레이 아이콘이 좌클릭되었습니다."),
     }
 )
 
 app.set_tray_menu_items(
     [
-        {"label": "Show Window", "callback": lambda: app.show_and_focus_main_window()},
-        {"label": "Exit", "callback": lambda: app.quit()},
+        {"label": "창 보이기", "callback": lambda: app.show_and_focus_main_window()},
+        {"label": "종료", "callback": lambda: app.quit()},
     ]
 )
 
-# Set tray icon tooltip
-app.set_tray_tooltip("This is a Pyloid application.")
+# 트레이 아이콘 툴팁 설정
+app.set_tray_tooltip("이것은 Pyloid 애플리케이션입니다.")
 
 def update_menu():
     app.set_tray_menu_items(
         [
             {
-                "label": "New Menu 1",
-                "callback": lambda: print("New Menu 1 clicked"),
+                "label": "새 메뉴 1",
+                "callback": lambda: print("새 메뉴 1 클릭됨"),
             },
             {
-                "label": "New Menu 2",
-                "callback": lambda: print("New Menu 2 clicked"),
+                "label": "새 메뉴 2",
+                "callback": lambda: print("새 메뉴 2 클릭됨"),
             },
-            {"label": "Exit", "callback": lambda: app.quit()},
+            {"label": "종료", "callback": lambda: app.quit()},
         ]
     )
 
 def update_tray_icon():
-    # Set tray icon animation
+    # 트레이 아이콘 애니메이션 설정
     app.set_tray_icon_animation(
         [
             "assets/frame1.png",
@@ -159,17 +159,17 @@ def update_tray_icon():
         interval=500,
     )
 
-# Update tray menu after 5 seconds
+# 5초 후 트레이 메뉴 업데이트
 timer.start_single_shot_timer(5000, update_menu)
 
-# Start tray icon animation after 3 seconds
+# 3초 후 트레이 아이콘 애니메이션 시작
 timer.start_single_shot_timer(3000, update_tray_icon)
 
-# Change tray icon to static icon after 6 seconds
+# 6초 후 트레이 아이콘을 정적 아이콘으로 변경
 timer.start_single_shot_timer(6000, lambda: app.set_tray_icon("assets/icon.ico"))
 
-# Change tray icon tooltip after 10 seconds
-timer.start_single_shot_timer(10000, lambda: app.set_tray_tooltip("New tooltip!"))
+# 10초 후 트레이 아이콘 툴팁 변경
+timer.start_single_shot_timer(10000, lambda: app.set_tray_tooltip("새로운 툴팁!"))
 ```
 
-This example demonstrates setting the tray icon, handling events, adding menu items, animating the icon, and setting tooltips. All settings can be changed dynamically while the app is running, allowing you to update tray functionality in real-time as needed.
+이 예제는 트레이 아이콘 설정, 이벤트 처리, 메뉴 항목 추가, 아이콘 애니메이션, 툴팁 설정을 보여줍니다. 모든 설정은 앱 실행 중에 동적으로 변경할 수 있어, 필요에 따라 트레이 기능을 실시간으로 업데이트할 수 있습니다.

@@ -1,21 +1,21 @@
-# Calling the Python from JS
+# JS에서 Python 호출하기
 
-## Introduction to PylonAPI
+## PylonAPI 소개
 
-The `PyloidAPI` class is a key component that enables interaction between JavaScript and Python.
+`PyloidAPI` 클래스는 JavaScript와 Python 간의 상호 작용을 가능하게 하는 핵심 구성 요소입니다.
 
-## Using the Bridge Decorator
+## Bridge 데코레이터 사용하기
 
-The `PyloidAPI` class is used in conjunction with the `Bridge` decorator to allow Python methods to be called from JavaScript.
+`PyloidAPI` 클래스는 `Bridge` 데코레이터와 함께 사용되어 Python 메서드를 JavaScript에서 호출할 수 있게 합니다.
 
-### Bridge Decorator Parameters
+### Bridge 데코레이터 매개변수
 
-The `Bridge` decorator can use the following parameters:
+`Bridge` 데코레이터는 다음 매개변수를 사용할 수 있습니다:
 
-* `result`: Specifies the return type.
-* `args`: Specifies the argument types.
+* `result`: 반환 타입을 지정합니다.
+* `args`: 인수 타입을 지정합니다.
 
-## Setting up JavaScript API in Python
+## Python에서 JavaScript API 설정하기
 
 {% tabs %}
 {% tab title="main.py" %}
@@ -27,11 +27,11 @@ app = Pyloid("Pyloid-App")
 class CustomAPI(PyloidAPI):
     @Bridge(str, result=str)
     def echo(self, message):
-        return f"Message received in Python: {message}"
+        return f"Python에서 받은 메시지: {message}"
 
-# Create main window
+# 메인 윈도우 생성
 window = app.create_window(
-    title="Pyloid Browser",
+    title="Pyloid 브라우저",
     js_apis=[CustomAPI()],
 )
 
@@ -47,7 +47,7 @@ app.run()
 {% tab title="index.html" %}
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,16 +55,16 @@ app.run()
     <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
     <script>
       document.addEventListener('pyloidReady', async function () {
-        console.log('Pyloid is ready');
+        console.log('Pyloid가 준비되었습니다');
 
-        let result = await window.pyloid.CustomAPI.echo('Hello, Pyloid!');
+        let result = await window.pyloid.CustomAPI.echo('안녕, Pyloid!');
         document.querySelector('p').textContent = result;
       });
     </script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <p>None</p>
+    <h1>안녕하세요!</h1>
+    <p>없음</p>
   </body>
 </html>
 ```

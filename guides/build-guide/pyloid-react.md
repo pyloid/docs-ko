@@ -4,84 +4,84 @@ icon: file-code
 
 # Pyloid-React-Vite
 
-Pyloid-React-Boilerplate is a template for projects combining a React frontend with a Python backend. Here, we'll explain in detail the project setup, development, and build process.
+Pyloid-React-Boilerplate는 React 프론트엔드와 Python 백엔드를 결합한 프로젝트를 위한 템플릿입니다. 여기서는 프로젝트 설정, 개발, 그리고 빌드 과정을 자세히 설명하겠습니다.
 
-### Prerequisites
+### 사전 요구사항
 
-* [Prerequisites](../../getting-started/prerequisites.md)
+- [사전 요구사항](../../getting-started/prerequisites.md)
 
-## 1. Project Initialization
+## 1. 프로젝트 초기화
 
-Before starting the project, you need to install all necessary dependencies.
+프로젝트를 시작하기 전에 필요한 모든 의존성을 설치해야 합니다.
 
 ```bash
 npm run init
 ```
 
-This command performs the following tasks:
+이 명령은 다음 작업을 수행합니다:
 
-1. Install npm packages
-2. Create a Python virtual environment (venv-pyloid)
-3. Install Python dependencies (based on requirements.txt)
+1. npm 패키지 설치
+2. Python 가상 환경 생성 (venv-pyloid)
+3. Python 의존성 설치 (requirements.txt 기반)
 
-The appropriate script is executed depending on the operating system.
+운영 체제에 따라 적절한 스크립트가 실행됩니다.
 
-## 2. Running the Development Server
+## 2. 개발 서버 실행
 
-During development, you can run both frontend and backend servers simultaneously with the following command:
+개발 중에는 다음 명령으로 프론트엔드와 백엔드 서버를 동시에 실행할 수 있습니다:
 
 ```bash
 npm run dev
 ```
 
-This command performs the following tasks:
+이 명령은 다음 작업을 수행합니다:
 
-1. Run the React frontend development server using Vite
-2. Run the Python backend server (src-pyloid/main.py)
+1. Vite를 사용하여 React 프론트엔드 개발 서버 실행
+2. Python 백엔드 서버 실행 (src-pyloid/main.py)
 
-The concurrently package is used to run both processes in parallel.
+concurrently 패키지를 사용하여 두 프로세스를 병렬로 실행합니다.
 
-## 3. Building the Project
+## 3. 프로젝트 빌드
 
-To build the project for production deployment, use the following command:
+프로덕션 배포를 위해 프로젝트를 빌드하려면 다음 명령을 사용하세요:
 
 ```bash
 npm run build
 ```
 
-This command performs the following tasks:
+이 명령은 다음 작업을 수행합니다:
 
-1. TypeScript compilation (tsc -b)
-2. Frontend build using Vite
-3. Package the Python backend into an executable using PyInstaller
+1. TypeScript 컴파일 (tsc -b)
+2. Vite를 사용한 프론트엔드 빌드
+3. PyInstaller를 사용하여 Python 백엔드를 실행 파일로 패키징
 
-### Backend Packaging with PyInstaller
+### PyInstaller를 사용한 백엔드 패키징
 
-PyInstaller is a tool that converts Python applications into standalone executables. Pyloid Boilerplate uses different spec files for each operating system:
+PyInstaller는 Python 애플리케이션을 독립 실행 파일로 변환하는 도구입니다. Pyloid Boilerplate는 각 운영 체제에 대해 다른 spec 파일을 사용합니다:
 
-* Windows: `build-windows.spec`
-* Linux: `build-linux.spec`
-* MacOS: `build-macos.spec`
+- Windows: `build-windows.spec`
+- Linux: `build-linux.spec`
+- MacOS: `build-macos.spec`
 
-These spec files specify which files to include and what options to use for PyInstaller.
+이 spec 파일들은 PyInstaller에 포함할 파일과 사용할 옵션을 지정합니다.
 
-### How PyInstaller Works
+### PyInstaller 작동 방식
 
-1. Dependency Analysis: PyInstaller analyzes the Python script and its dependencies.
-2. File Collection: It collects all necessary Python modules, libraries, and data files.
-3. Binary Generation: It packages the collected files into a single directory or a single executable file.
+1. 의존성 분석: PyInstaller는 Python 스크립트와 그 의존성을 분석합니다.
+2. 파일 수집: 필요한 모든 Python 모듈, 라이브러리, 데이터 파일을 수집합니다.
+3. 바이너리 생성: 수집된 파일들을 단일 디렉토리나 단일 실행 파일로 패키징합니다.
 
-### Custom Build Process
+### 사용자 정의 빌드 프로세스
 
-You can modify the build process to meet your project's specific requirements:
+프로젝트의 특정 요구사항에 맞게 빌드 프로세스를 수정할 수 있습니다:
 
-1. Modify the scripts section in `package.json`
-2. Modify PyInstaller spec files (e.g., `build-windows.spec`, `build-linux.spec`, `build-macos.spec`)
-3. Write additional build scripts if necessary
+1. `package.json`의 scripts 섹션 수정
+2. PyInstaller spec 파일 수정 (예: `build-windows.spec`, `build-linux.spec`, `build-macos.spec`)
+3. 필요한 경우 추가 빌드 스크립트 작성
 
-### Important Notes
+### 중요 참고사항
 
-* Cross-platform Builds: You need to perform the build for each platform on the respective operating system.
-* Environment Variables: You may need to set environment variables appropriately depending on the production environment.
+- 크로스 플랫폼 빌드: 각 플랫폼에 대한 빌드는 해당 운영 체제에서 수행해야 합니다.
+- 환경 변수: 프로덕션 환경에 따라 환경 변수를 적절히 설정해야 할 수 있습니다.
 
-This guide should help you understand the process of initializing, developing, and building a project using the Pylon Boilerplate. Backend packaging with PyInstaller simplifies deployment and facilitates dependency management.
+이 가이드는 Pyloid Boilerplate를 사용하여 프로젝트를 초기화, 개발, 빌드하는 과정을 이해하는 데 도움이 될 것입니다. PyInstaller를 사용한 백엔드 패키징은 배포를 단순화하고 의존성 관리를 용이하게 합니다.

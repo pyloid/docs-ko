@@ -1,22 +1,22 @@
-# Production Utils
+# 프로덕션 유틸리티
 
 ## `get_production_path()`
 
-Returns the path to resource files in a production environment.
+프로덕션 환경에서 리소스 파일의 경로를 반환합니다.
 
-### Parameters
+### 매개변수
 
-None
+없음
 
-### Return Value
+### 반환값
 
-* `Optional[str]`: Returns the path to resource files in a production environment. Returns `None` if running as a regular Python script.
+- `Optional[str]`: 프로덕션 환경에서 리소스 파일의 경로를 반환합니다. 일반 Python 스크립트로 실행 중인 경우 `None`을 반환합니다.
 
-### Description
+### 설명
 
-This function checks if the current execution environment is a production environment (e.g., an executable built with PyInstaller) and returns the path to resource files if it is. Returns `None` if running as a regular Python script.
+이 함수는 현재 실행 환경이 프로덕션 환경(예: PyInstaller로 빌드된 실행 파일)인지 확인하고, 그렇다면 리소스 파일의 경로를 반환합니다. 일반 Python 스크립트로 실행 중인 경우 `None`을 반환합니다.
 
-### Example Usage
+### 사용 예시
 
 ```python
 from pyloid import Pyloid, is_production, get_production_path
@@ -32,21 +32,21 @@ else:
 
 ## `is_production()`
 
-Checks if the current environment is a production environment.
+현재 환경이 프로덕션 환경인지 확인합니다.
 
-### Parameters
+### 매개변수
 
-None
+없음
 
-### Return Value
+### 반환값
 
-* `bool`: Returns `True` if it is a production environment, otherwise returns `False`.
+- `bool`: 프로덕션 환경이면 `True`를 반환하고, 그렇지 않으면 `False`를 반환합니다.
 
-### Description
+### 설명
 
-This function checks if the current execution environment is a production environment (e.g., an executable built with PyInstaller) by examining the `sys.frozen` attribute.
+이 함수는 `sys.frozen` 속성을 검사하여 현재 실행 환경이 프로덕션 환경(예: PyInstaller로 빌드된 실행 파일)인지 확인합니다.
 
-### Example Usage
+### 사용 예시
 
 ```python
 from pyloid import Pyloid, is_production, get_production_path

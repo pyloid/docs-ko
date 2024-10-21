@@ -1,23 +1,23 @@
-# Creating a Project
+# 프로젝트 생성하기
 
-### Prerequisites
+### 사전 요구사항
 
-* [Prerequisites](prerequisites.md)
+* [사전 요구사항](prerequisites.md)
 
-### Create Project 📦
+### 프로젝트 생성 📦
 
-#### Creating a HTML/CSS/JS + Pyloid Project 🌐
+#### HTML/CSS/JS + Pyloid 프로젝트 생성하기 🌐
 
 [https://github.com/pyloid/pyloid-html-boilerplate](https://github.com/pyloid/pyloid-html-boilerplate)
 
-#### Creating a React + Vite + Pyloid Project ⚛️
+#### React + Vite + Pyloid 프로젝트 생성하기 ⚛️
 
 [https://github.com/pyloid/pyloid-react-boilerplate](https://github.com/pyloid/pyloid-react-boilerplate)
 
-#### Custom Your Boilerplate 🔨
+#### 나만의 보일러플레이트 만들기 🔨
 
 ```
 pip install pyloid
 ```
 
-Package URL: [pyloid package](https://pypi.org/project/pyloid/)
+패키지 URL: [pyloid 패키지](https://pypi.org/project/pyloid/)

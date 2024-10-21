@@ -2,5 +2,5 @@
 icon: js
 ---
 
-# Javascript (Frontend)
+# Javascript (프론트엔드)
 
