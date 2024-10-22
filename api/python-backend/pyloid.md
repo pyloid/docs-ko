@@ -279,10 +279,10 @@ def get_primary_monitor(self) -> Monitor:
 
 ### 클립보드
 
-#### copy_to_clipboard
+#### set_clipboard_text
 
 ```python
-def copy_to_clipboard(self, text: str):
+def set_clipboard_text(self, text: str):
 ```
 
 텍스트를 클립보드에 복사합니다.
