@@ -2,7 +2,7 @@
 
 ## 개요
 
-이 문서는 파일 다이어로그를 열고 파일이나 디렉토리를 선택하는 방법에 대해 설명합니다. 이 기능은 PyQt의 `QFileDialog` 클래스를 사용하여 구현됩니다. 이 문서에서는 `open_file_dialog`, `save_file_dialog`, `select_directory_dialog` 세 가지 메서드를 다룹니다.
+이 문서는 파일 다이어로그를 열고 파일이나 디렉토리를 선택하는 방법에 대해 설명합니다. 이 기능은 PySide6의 `QFileDialog` 클래스를 사용하여 구현됩니다. 이 문서에서는 `open_file_dialog`, `save_file_dialog`, `select_directory_dialog` 세 가지 메서드를 다룹니다.
 
 ## 메서드 설명
 
