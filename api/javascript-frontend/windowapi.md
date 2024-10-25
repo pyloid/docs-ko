@@ -55,7 +55,40 @@ await window.pyloid.WindowAPI.hide();
 await window.pyloid.WindowAPI.show();
 ```
 
-#### 5. `toggleFullscreen()`
+#### 5. `focus()`
+
+- **설명**: 현재 창에 포커스를 맞춥니다.
+- **반환**: `Promise<void>`
+
+**사용 예**:
+
+```javascript
+await window.pyloid.WindowAPI.focus();
+```
+
+#### 6. `showAndFocus()`
+
+- **설명**: 현재 창을 보여주고 포커스를 맞춥니다.
+- **반환**: `Promise<void>`
+
+**사용 예**:
+
+```javascript
+await window.pyloid.WindowAPI.showAndFocus();
+```
+
+#### 7. `fullscreen()`
+
+- **설명**: 현재 창을 전체 화면 모드로 전환합니다.
+- **반환**: `Promise<void>`
+
+**사용 예**:
+
+```javascript
+await window.pyloid.WindowAPI.fullscreen();
+```
+
+#### 8. `toggleFullscreen()`
 
 - **설명**: 현재 창의 전체 화면 모드를 전환합니다.
 - **반환**: `Promise<void>`
@@ -66,7 +99,7 @@ await window.pyloid.WindowAPI.show();
 await window.pyloid.WindowAPI.toggleFullscreen();
 ```
 
-#### 6. `minimize()`
+#### 9. `minimize()`
 
 - **설명**: 현재 창을 최소화합니다.
 - **반환**: `Promise<void>`
@@ -77,7 +110,7 @@ await window.pyloid.WindowAPI.toggleFullscreen();
 await window.pyloid.WindowAPI.minimize();
 ```
 
-#### 7. `maximize()`
+#### 10. `maximize()`
 
 - **설명**: 현재 창을 최대화합니다.
 - **반환**: `Promise<void>`
@@ -88,7 +121,7 @@ await window.pyloid.WindowAPI.minimize();
 await window.pyloid.WindowAPI.maximize();
 ```
 
-#### 8. `unmaximize()`
+#### 11. `unmaximize()`
 
 - **설명**: 창을 정상 상태로 복원합니다.
 - **반환**: `Promise<void>`
@@ -99,7 +132,42 @@ await window.pyloid.WindowAPI.maximize();
 await window.pyloid.WindowAPI.unmaximize();
 ```
 
-#### 9. `setTitle(title: string)`
+#### 12. `toggleMaximize()`
+
+- **설명**: 현재 창의 최대화 상태를 전환합니다.
+- **반환**: `Promise<void>`
+
+**사용 예**:
+
+```javascript
+await window.pyloid.WindowAPI.toggleMaximize();
+```
+
+#### 13. `isFullscreen()`
+
+- **설명**: 현재 창이 전체 화면 모드인지 확인합니다.
+- **반환**: `Promise<boolean>` - 전체 화면이면 `true`, 아니면 `false`를 반환합니다.
+
+**사용 예**:
+
+```javascript
+const isFullscreen = await window.pyloid.WindowAPI.isFullscreen();
+console.log(isFullscreen);
+```
+
+#### 14. `isMaximized()`
+
+- **설명**: 현재 창이 최대화되었는지 확인합니다.
+- **반환**: `Promise<boolean>` - 최대화되었으면 `true`, 아니면 `false`를 반환합니다.
+
+**사용 예**:
+
+```javascript
+const isMaximized = await window.pyloid.WindowAPI.isMaximized();
+console.log(isMaximized);
+```
+
+#### 15. `setTitle(title: string)`
 
 - **설명**: 창의 제목을 설정합니다.
 - **매개변수**:
@@ -112,7 +180,7 @@ await window.pyloid.WindowAPI.unmaximize();
 await window.pyloid.WindowAPI.setTitle('내 앱 창');
 ```
 
-#### 10. `setSize(width: number, height: number)`
+#### 16. `setSize(width: number, height: number)`
 
 - **설명**: 창의 크기를 설정합니다.
 - **매개변수**:
@@ -126,7 +194,7 @@ await window.pyloid.WindowAPI.setTitle('내 앱 창');
 await window.pyloid.WindowAPI.setSize(800, 600);
 ```
 
-#### 11. `setPosition(x: number, y: number)`
+#### 17. `setPosition(x: number, y: number)`
 
 - **설명**: 창의 위치를 설정합니다.
 - **매개변수**:
@@ -140,7 +208,7 @@ await window.pyloid.WindowAPI.setSize(800, 600);
 await window.pyloid.WindowAPI.setPosition(100, 100);
 ```
 
-#### 12. `setFrame(frame: boolean)`
+#### 18. `setFrame(frame: boolean)`
 
 - **설명**: 창의 프레임(예: 창 테두리)을 설정합니다.
 - **매개변수**:
@@ -153,7 +221,7 @@ await window.pyloid.WindowAPI.setPosition(100, 100);
 await window.pyloid.WindowAPI.setFrame(true);
 ```
 
-#### 13. `setContextMenu(contextMenu: boolean)`
+#### 19. `setContextMenu(contextMenu: boolean)`
 
 - **설명**: 창의 컨텍스트 메뉴 표시 여부를 설정합니다.
 - **매개변수**:
@@ -166,7 +234,7 @@ await window.pyloid.WindowAPI.setFrame(true);
 await window.pyloid.WindowAPI.setContextMenu(false);
 ```
 
-#### 14. `setDevTools(enable: boolean)`
+#### 20. `setDevTools(enable: boolean)`
 
 - **설명**: 창의 개발자 도구를 활성화하거나 비활성화합니다. 또한 `F12` 키를 사용하여 개발자 도구를 열 수 있는지 여부를 설정합니다.
 - **매개변수**:
@@ -185,7 +253,7 @@ await window.pyloid.WindowAPI.setDevTools(true);
 await window.pyloid.WindowAPI.setDevTools(false);
 ```
 
-#### 15. `capture(savePath: string)`
+#### 21. `capture(savePath: string)`
 
 - **설명**: 현재 창의 뷰를 캡처하여 지정된 경로에 저장합니다.
 - **매개변수**:
@@ -210,3 +278,4 @@ if (filePath) {
 ### 참고사항
 
 - 모든 메서드는 `Promise`를 반환하므로 비동기 함수에서 `await`와 함께 사용할 수 있습니다.
+- 이러한 API를 책임감 있게 사용하세요. 일부 동작(예: 창 닫기 또는 최소화)은 사용자 경험에 영향을 줄 수 있습니다.
