@@ -22,6 +22,7 @@
 
 ## 가이드
 
+- [커스텀 보일러플레이트 만들기](guides/custom-boilerpalte.md)
 - [JS에서 Python 호출하기](guides/calling-the-python-from-js.md)
 - [Python에서 JS 호출하기](guides/calling-the-js-from-python.md)
 - [키보드 단축키](guides/keyboard-shotcuts.md)
