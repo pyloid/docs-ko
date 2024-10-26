@@ -17,32 +17,7 @@ npm create vite@latest
 
 ### 2. index.html 파일 수정
 
-#### (1) index.html 에 QtWebChannel 추가
-
-{% code title="index.html" lineNumbers=true %}
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Add QtWebChannel -->
-    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
-    <!---------------------->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pyloid</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
-```
-
-{% endcode %}
-
-#### (2) index.html 에 Security Policy 추가
+#### index.html 에 Security Policy 추가 (선택사항)
 
 {% code title="index.html" %}
 
@@ -55,7 +30,7 @@ npm create vite@latest
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pyloid</title>
-    <!-- Add security policy -->
+    <!-- Add security policy  (선택사항) -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' qrc://*; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
