@@ -54,7 +54,7 @@ class MessageAPI(PyloidAPI):
         return reply == QMessageBox.Yes
 ```
 
-## 사용 방법
+### 사용 방법
 
 1. 커스텀 API 클래스를 정의합니다.
 2. Pyloid 애플리케이션 생성 시 API 인스턴스를 전달합니다.
@@ -76,9 +76,6 @@ app.run()
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
-  </head>
   <body>
     <button id="openFile">파일 열기</button>
     <button id="showMessage">메시지 표시</button>
@@ -97,7 +94,9 @@ app.run()
           );
         }
 
-        document.querySelector('#openFile').addEventListener('click', openFile);
+        document
+          .querySelector('#openFile')
+          .addEventListener('click', openFile);
         document
           .querySelector('#showMessage')
           .addEventListener('click', showMessage);
@@ -105,6 +104,22 @@ app.run()
     </script>
   </body>
 </html>
+```
+
+## QMainWindow 사용하여 원하는 기능 직접 구현
+
+app.create_window() 함수를 통해 생성된 BrowserWindow 인스턴스에서 `get_QMainWindow()` 메서드를 통해 Pyside6의 QMainWindow 인스턴스를 얻을 수 있습니다. 이를 통해 원하는 기능을 직접 구현할 수 있습니다.
+
+```python
+from PySide6.QtCore import Qt
+from pyloid import Pyloid
+
+app = Pyloid(app_name="Pyloid-App")
+
+window = app.create_window("pyloid-window")
+qmain = window.get_QMainWindow() # return QMainWindow instance
+
+qmain.setWindowFlags(qmain.windowFlags() | Qt.WindowStaysOnTopHint) # window stays on top
 ```
 
 ## 주의사항
