@@ -12,13 +12,14 @@
 
 `Bridge` 데코레이터는 다음 매개변수를 사용할 수 있습니다:
 
-* `result`: 반환 타입을 지정합니다.
-* `args`: 인수 타입을 지정합니다.
+- `result`: 반환 타입을 지정합니다.
+- `args`: 인수 타입을 지정합니다.
 
 ## Python에서 JavaScript API 설정하기
 
 {% tabs %}
 {% tab title="main.py" %}
+
 ```python
 from pyloid import Pyloid, PyloidAPI, Bridge
 
@@ -42,9 +43,11 @@ window.focus()
 
 app.run()
 ```
+
 {% endtab %}
 
 {% tab title="index.html" %}
+
 ```html
 <!DOCTYPE html>
 <html lang="ko">
@@ -52,7 +55,6 @@ app.run()
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pyloid</title>
-    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
     <script>
       document.addEventListener('pyloidReady', async function () {
         console.log('Pyloid가 준비되었습니다');
@@ -68,5 +70,6 @@ app.run()
   </body>
 </html>
 ```
+
 {% endtab %}
 {% endtabs %}
