@@ -4,6 +4,14 @@
 
 `PyloidAPI` 클래스는 JavaScript와 Python 간의 상호 작용을 가능하게 하는 핵심 구성 요소입니다.
 
+### PyloidAPI 속성
+
+PyloidAPI 클래스는 다음과 같은 중요한 속성들을 가지고 있습니다:
+
+- `window`: BrowserWindow 인스턴스를 참조합니다.
+- `app`: Pyloid 애플리케이션 인스턴스를 참조합니다.
+- `window_id`: 브라우저 창의 고유 식별자입니다.
+
 ## Bridge 데코레이터 사용하기
 
 `PyloidAPI` 클래스는 `Bridge` 데코레이터와 함께 사용되어 Python 메서드를 JavaScript에서 호출할 수 있게 합니다.
